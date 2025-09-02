@@ -1,0 +1,4 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-CN'
+title = '欣欣李的世界'
+theme = 'ananke'

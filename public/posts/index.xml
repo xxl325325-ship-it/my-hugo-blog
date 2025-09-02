@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 欣欣李的世界</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on 欣欣李的世界</description>
+    <generator>Hugo</generator>
+    <language>en-CN</language>
+    <lastBuildDate>Tue, 02 Sep 2025 10:44:58 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我的第一篇日志</title>
+      <link>http://localhost:1313/posts/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%97%A5%E5%BF%97/</link>
+      <pubDate>Tue, 02 Sep 2025 10:44:58 +0800</pubDate>
+      <guid>http://localhost:1313/posts/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%97%A5%E5%BF%97/</guid>
+      <description>&lt;h1 id=&#34;欢迎来到我的空间&#34;&gt;欢迎来到我的空间！&lt;/h1&gt;&#xA;&lt;p&gt;今天是个值得纪念的日子，我终于用 Hugo 搭建了自己的网站！&lt;/p&gt;&#xA;&lt;h2 id=&#34;今天的收获&#34;&gt;今天的收获&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;学会了安装 Hugo&lt;/li&gt;&#xA;&lt;li&gt;成功配置了主题&lt;/li&gt;&#xA;&lt;li&gt;正在写下第一篇文章&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;感觉&lt;strong&gt;非常有趣&lt;/strong&gt;！以后这里就是我的数字小家了。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/1stday.png&#34; alt=&#34;我的小天地&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
