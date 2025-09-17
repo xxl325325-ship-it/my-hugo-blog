@@ -1,4 +1,7 @@
 /* 自定义头部背景高度 - 将灰色背景区域缩小到原来的一半 */
+/* 应用到所有页面的头部背景区域 */
+
+/* 基础头部样式 */
 .pb3-m {
   padding-bottom: 1rem !important;  /* 原来的一半 */
 }
@@ -12,6 +15,11 @@
   padding-bottom: 0.75rem !important;  /* 原来的一半 */
 }
 
+.pv4 {
+  padding-top: 1rem !important;     /* 原来的一半 */
+  padding-bottom: 1rem !important;   /* 原来的一半 */
+}
+
 .pv6 {
   padding-top: 1.5rem !important;    /* 原来的一半 */
   padding-bottom: 1.5rem !important;   /* 原来的一半 */
@@ -22,7 +30,25 @@
   padding-bottom: 1.5rem !important;   /* 原来的一半 */
 }
 
-/* 响应式调整 */
+/* 页面头部特定样式 */
+.page-header .pv6 {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+.site-header .pv6-l {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+/* 响应式调整 - 确保所有屏幕尺寸都应用 */
+@media screen and (min-width: 30em) {
+  .pv4-ns {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+}
+
 @media screen and (min-width: 60em) {
   .pb6-l {
     padding-bottom: 3rem !important;
@@ -32,4 +58,22 @@
     padding-top: 1.5rem !important;
     padding-bottom: 1.5rem !important;
   }
+  
+  .pv4-l {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+}
+
+/* 确保所有背景区域都应用 */
+.bg-black,
+.bg-near-black,
+.bg-dark-gray {
+  /* 保持背景色但减小高度 */
+}
+
+/* 导航区域也相应缩小 */
+nav.pv3 {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
 }
