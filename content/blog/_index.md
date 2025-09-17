@@ -1,6 +1,6 @@
 ---
 title: "学习笔记与思考"
-description: "中年转型的真实记录：AI工具、编程学习、时间管理的实践心得"
+description: 
 date: 2025-09-03
 type: "blog"
 layout: "list"
