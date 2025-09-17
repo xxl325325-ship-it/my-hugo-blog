@@ -1,0 +1,17 @@
+{{ define "main" }}
+<main class="pb7" role="main">
+  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray">
+    {{ $homeContent := .Site.GetPage "/home/_index.md" }}
+    {{ if $homeContent }}
+      <div class="mt4">
+        {{ $homeContent.Content }}
+      </div>
+    {{ else }}
+      <div class="mt4">
+        <h1>欢迎来到 Chilli's Next Chapter</h1>
+        <p>这里是 Chilli 的个人学习空间，记录中年转型的真实历程。</p>
+      </div>
+    {{ end }}
+  </article>
+</main>
+{{ end }}
