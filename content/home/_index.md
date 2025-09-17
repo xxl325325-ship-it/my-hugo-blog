@@ -1,6 +1,5 @@
 ---
 title: "Chilli's Next Chapter"
-description: "中年转型的真实记录 - 技术探索、学习心得与生活感悟"
 date: 2025-09-10
 ---
 
