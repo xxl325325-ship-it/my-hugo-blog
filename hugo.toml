@@ -1,9 +1,15 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-CN'
+baseURL = "https://xxlffjournal.netlify.app/"
+languageCode = "zh-CN"
 title = "Chilli's Next Chapter"
-theme = 'ananke'
+theme = "ananke"
 
 [markup.goldmark.renderer]
   unsafe = true
 
-ignoreLogs = ['warning-goldmark-raw-html']
+ignoreLogs = ["warning-goldmark-raw-html"]
+
+[params]
+  description = "Chilli's personal learning journey - documenting midlife transformation and tech exploration"
+  author = "Chilli"
+  background_color_class = "bg-black"
+  recent_posts_number = 3
