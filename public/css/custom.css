@@ -1,0 +1,35 @@
+/* 自定义头部背景高度 - 将灰色背景区域缩小到原来的一半 */
+.pb3-m {
+  padding-bottom: 1rem !important;  /* 原来的一半 */
+}
+
+.pb6-l {
+  padding-bottom: 3rem !important;  /* 原来的一半 */
+}
+
+.pv3 {
+  padding-top: 0.75rem !important;   /* 原来的一半 */
+  padding-bottom: 0.75rem !important;  /* 原来的一半 */
+}
+
+.pv6 {
+  padding-top: 1.5rem !important;    /* 原来的一半 */
+  padding-bottom: 1.5rem !important;   /* 原来的一半 */
+}
+
+.pv6-l {
+  padding-top: 1.5rem !important;    /* 原来的一半 */
+  padding-bottom: 1.5rem !important;   /* 原来的一半 */
+}
+
+/* 响应式调整 */
+@media screen and (min-width: 60em) {
+  .pb6-l {
+    padding-bottom: 3rem !important;
+  }
+  
+  .pv6-l {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+}
