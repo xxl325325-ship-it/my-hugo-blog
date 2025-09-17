@@ -1,1 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chilli's Next Chapter</title><link>https://xxlffjournal.netlify.app/home/</link><description>Recent content on Chilli's Next Chapter</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate/><atom:link href="https://xxlffjournal.netlify.app/home/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chilli&#39;s Next Chapter</title>
+    <link>http://localhost:64727/home/</link>
+    <description>Recent content on Chilli&#39;s Next Chapter</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://localhost:64727/home/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
