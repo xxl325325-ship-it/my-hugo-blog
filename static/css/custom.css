@@ -77,3 +77,21 @@ nav.pv3 {
   padding-top: 0.5rem !important;
   padding-bottom: 0.5rem !important;
 }
+
+/* 自定义宽度类 - 比measure-wide增加40%宽度 */
+.measure-wider {
+  max-width: 42rem !important;  /* measure-wide通常是30rem，增加40%约为42rem */
+}
+
+/* 响应式调整 */
+@media screen and (min-width: 30em) {
+  .measure-wider-ns {
+    max-width: 42rem !important;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .measure-wider-l {
+    max-width: 42rem !important;
+  }
+}
