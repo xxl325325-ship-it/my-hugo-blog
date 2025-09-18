@@ -1,6 +1,5 @@
 ---
-title: "项目"
-description: "我参与和创建的各类项目展示"
+title: "我的项目"
 date: 2025-09-03
 type: "project"
 layout: "list"
@@ -11,7 +10,6 @@ menu:
     identifier: "project"
 ---
 
-# 我的项目
 
 这个页面展示了我的各类项目。每个项目都代表了我在不同领域的探索和实践。
 
