@@ -1,0 +1,76 @@
+name: 定时部署到生产环境
+
+on:
+  schedule:
+    # 每天12点和0点运行 (UTC时间)
+    # 北京时间 12:00 = UTC 04:00
+    # 北京时间 00:00 = UTC 16:00 (前一天)
+    - cron: '0 4,16 * * *'
+  # 保留手动触发选项
+  workflow_dispatch:
+    inputs:
+      deploy_message:
+        description: '部署说明'
+        required: false
+        default: '手动触发的定时部署'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+      
+    - name: 设置 Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: '0.149.0'
+        extended: true
+        
+    - name: 检查是否有新更改
+      id: check_changes
+      run: |
+        # 获取上次部署后的更改
+        if [ "${{ github.event_name }}" = "schedule" ]; then
+          # 检查过去12小时内是否有提交
+          RECENT_COMMITS=$(git log --since="12 hours ago" --oneline | wc -l)
+          if [ $RECENT_COMMITS -gt 0 ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "📊 发现 $RECENT_COMMITS 个新提交，将执行部署"
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "⏭️ 过去12小时内无新提交，跳过部署"
+          fi
+        else
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+          echo "🚀 手动触发，执行部署"
+        fi
+        
+    - name: 构建网站
+      if: steps.check_changes.outputs.has_changes == 'true'
+      run: hugo --minify
+      
+    - name: 部署到 Netlify
+      if: steps.check_changes.outputs.has_changes == 'true'
+      uses: nwtgck/actions-netlify@v2.0
+      with:
+        publish-dir: './public'
+        production-branch: main
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        deploy-message: "${{ github.event.inputs.deploy_message || '定时部署' }} - $(date '+%Y-%m-%d %H:%M')"
+        enable-pull-request-comment: false
+        enable-commit-comment: true
+        overwrites-pull-request-comment: true
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        
+    - name: 部署完成通知
+      if: steps.check_changes.outputs.has_changes == 'true'
+      run: |
+        echo "✅ 部署完成！"
+        echo "🌐 网站地址：https://chillinew.com"
+        echo "⏰ 部署时间：$(date '+%Y-%m-%d %H:%M:%S')"
