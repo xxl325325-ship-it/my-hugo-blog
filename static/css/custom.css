@@ -83,6 +83,17 @@ nav.pv3 {
   max-width: 42rem !important;  /* measure-wide通常是30rem，增加40%约为42rem */
 }
 
+/* 增强优先级 - 确保覆盖其他可能的规则 */
+.center.measure-wider {
+  max-width: 42rem !important;
+}
+
+.measure-wider.center {
+  max-width: 42rem !important;
+}
+
+
+
 /* 响应式调整 */
 @media screen and (min-width: 30em) {
   .measure-wider-ns {
@@ -94,4 +105,105 @@ nav.pv3 {
   .measure-wider-l {
     max-width: 42rem !important;
   }
+}
+
+/* 关于页面样式调整 */
+.about-page {
+  max-width: 672px !important;
+  margin: 0 auto;
+}
+
+/* 强制关于页面内容左对齐 */
+main[role="main"] section {
+  text-align: left !important;
+}
+
+main[role="main"] section * {
+  text-align: left !important;
+}
+
+/* 移除居中类的影响 */
+main[role="main"] .tc-l {
+  text-align: left !important;
+}
+
+main[role="main"] .center {
+  text-align: left !important;
+}
+
+/* 文字颜色调整 */
+main[role="main"] h1 {
+  color: #555 !important; /* 缩小一个色号 */
+  text-align: center !important; /* 标题居中 */
+}
+
+/* 标题居中 - 针对header区域的h1 */
+header h1 {
+  text-align: center !important;
+}
+
+/* 强制标题居中 - 覆盖所有可能的冲突 */
+.tc-l h1,
+.tc-l .f2,
+.tc-l .f-subheadline-l,
+.tc-l .fw2,
+.tc-l .white-90,
+.tc-l .mb0,
+.tc-l .lh-title {
+  text-align: center !important;
+}
+
+/* 针对标题容器的强制居中 */
+.tc-l.pv4.pv6-l.ph3.ph4-ns h1 {
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+/* 覆盖Tachyons的tc-l类，确保文本居中 */
+.tc-l {
+  text-align: center !important;
+}
+
+.tc-l * {
+  text-align: center !important;
+}
+
+main[role="main"] h2 {
+  color: #666 !important; /* 缩小一个色号 */
+}
+
+main[role="main"] p {
+  color: #777 !important; /* 缩小一个色号 */
+}
+
+main[role="main"] blockquote {
+  color: #888 !important; /* 缩小一个色号 */
+}
+
+/* 确保所有文字左对齐 */
+.about-page * {
+  text-align: left !important;
+}
+
+/* 特别针对关于页面的内容区域 */
+article.nested-copy-line-height section {
+  text-align: left !important;
+}
+
+article.nested-copy-line-height section * {
+  text-align: left !important;
+}
+
+/* 强制覆盖Tachyons的居中类 */
+.tc-l {
+  text-align: left !important;
+}
+
+/* 针对关于页面的具体选择器 - 居中布局 */
+main[role="main"] article section.tc-l.center.measure-wide {
+  text-align: left !important;
+  max-width: 672px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }

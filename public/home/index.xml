@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Chilli&#39;s Next Chapter</title>
-    <link>https://chillinew.com/home/</link>
+    <link>http://localhost:58248/home/</link>
     <description>Recent content on Chilli&#39;s Next Chapter</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://chillinew.com/home/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:58248/home/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
