@@ -15,8 +15,21 @@
           <time class="f7 gray db mb2">{{ .Date.Format "2006年01月02日" }}</time>
           {{ if .Description }}
           <p class="f6 mid-gray lh-copy mb0">{{ .Description }}</p>
-          {{ else if .Summary }}
-          <p class="f6 mid-gray lh-copy mb0">{{ .Summary }}</p>
+          {{ else }}
+          {{ $rawContent := .RawContent }}
+          {{ $firstSentence := "" }}
+          {{ if $rawContent }}
+            {{ $sentences := split $rawContent "。" }}
+            {{ if ge (len $sentences) 1 }}
+              {{ $firstSentence = index $sentences 0 }}
+              {{ if $firstSentence }}
+                {{ $firstSentence = trim $firstSentence " \n\r\t#-" }}
+                {{ if $firstSentence }}
+                  <p class="f6 mid-gray lh-copy mb0">{{ $firstSentence }}。</p>
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
           {{ end }}
         </div>
         {{ end }}
