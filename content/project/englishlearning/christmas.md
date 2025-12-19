@@ -8,24 +8,39 @@ featured_image: "/images/english-learning-icon.svg"
 ---
 
 <div class="christmas-container">
-  <h1 class="page-title">Christmas Time</h1>
+  <h1 class="page-title">Christmas Learning - Day 1!</h1>
   
   <div class="learning-sentences">
     <div class="sentence-card">
       <div class="sentence-image">
-        <svg viewBox="0 0 200 150" class="christmas-illustration">
-          <!-- Christmas tree -->
-          <polygon points="100,30 70,70 130,70" fill="#7CB342"/>
-          <polygon points="100,50 60,90 140,90" fill="#8BC34A"/>
-          <polygon points="100,70 50,110 150,110" fill="#9CCC65"/>
-          <rect x="95" y="110" width="10" height="20" fill="#8D6E63"/>
-          <circle cx="85" cy="60" r="3" fill="#FFE082"/>
-          <circle cx="115" cy="75" r="3" fill="#FFCCBC"/>
-          <circle cx="95" cy="90" r="3" fill="#B2DFDB"/>
+        <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+          <!-- Simple Christmas Tree with warm lights - flat cartoon style -->
+          <!-- Light background -->
+          <rect width="200" height="150" fill="#FFF8F0"/>
+          
+          <!-- Tree trunk -->
+          <rect x="95" y="110" width="10" height="25" fill="#A0826D" rx="2"/>
+          
+          <!-- Tree layers - soft green -->
+          <polygon points="100,25 75,55 125,55" fill="#90EE90" rx="5"/>
+          <polygon points="100,40 70,75 130,75" fill="#98FB98" rx="5"/>
+          <polygon points="100,55 65,95 135,95" fill="#90EE90" rx="5"/>
+          <polygon points="100,70 60,115 140,115" fill="#98FB98" rx="5"/>
+          
+          <!-- Warm small lights - gentle and sparse -->
+          <circle cx="85" cy="40" r="2" fill="#FFE4B5" opacity="0.9"/>
+          <circle cx="115" cy="35" r="2" fill="#FFE4B5" opacity="0.9"/>
+          <circle cx="80" cy="60" r="2" fill="#FFE4B5" opacity="0.9"/>
+          <circle cx="120" cy="65" r="2" fill="#FFE4B5" opacity="0.9"/>
+          <circle cx="90" cy="80" r="2" fill="#FFE4B5" opacity="0.9"/>
+          <circle cx="110" cy="85" r="2" fill="#FFE4B5" opacity="0.9"/>
+          
+          <!-- Gentle star on top -->
+          <polygon points="100,15 102,20 107,20 103,23 105,28 100,25 95,28 97,23 93,20 98,20" fill="#FFF8DC" opacity="0.8"/>
         </svg>
       </div>
-      <div class="sentence-text">This is a Christmas tree.</div>
-      <button class="play-button" onclick="playAudio('sentence1')">
+      <div class="sentence-text">It's Christmas.</div>
+      <button class="play-button" onclick="playAudio('its-christmas')">
         <svg viewBox="0 0 24 24" class="play-icon">
           <polygon points="5,3 19,12 5,21" fill="currentColor"/>
         </svg>
@@ -34,20 +49,48 @@ featured_image: "/images/english-learning-icon.svg"
     
     <div class="sentence-card">
       <div class="sentence-image">
-        <svg viewBox="0 0 200 150" class="christmas-illustration">
-          <!-- Santa -->
-          <circle cx="100" cy="80" r="25" fill="#FFCCBC"/>
-          <path d="M75,80 Q100,60 125,80" fill="white"/>
-          <path d="M70,85 Q100,65 130,85" fill="#F44336"/>
-          <circle cx="90" cy="75" r="3" fill="#333"/>
-          <circle cx="110" cy="75" r="3" fill="#333"/>
-          <path d="M95,85 Q100,90 105,85" fill="#333"/>
-          <rect x="85" y="105" width="30" height="25" fill="#F44336"/>
-          <rect x="75" y="110" width="50" height="8" fill="white"/>
+        <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+          <!-- Smiling child near Christmas tree - flat cartoon style -->
+          <!-- Simple light background -->
+          <rect width="200" height="150" fill="#FFF8F0"/>
+          
+          <!-- Simple Christmas tree in background -->
+          <polygon points="120,30 105,60 135,60" fill="#90EE90"/>
+          <polygon points="120,45 100,80 140,80" fill="#98FB98"/>
+          <polygon points="120,60 95,100 145,100" fill="#90EE90"/>
+          <rect x="117" y="100" width="6" height="20" fill="#A0826D"/>
+          
+          <!-- Smiling child - simple and cute -->
+          <!-- Child's head -->
+          <circle cx="70" cy="65" r="18" fill="#FDBCB4"/>
+          
+          <!-- Child's hair -->
+          <path d="M 55 55 Q 70 45 85 55 Q 85 50 80 48 Q 70 46 60 48 Q 55 50 55 55" fill="#D2691E"/>
+          
+          <!-- Child's eyes (gentle happy expression) -->
+          <circle cx="64" cy="62" r="2" fill="#4A4A4A"/>
+          <circle cx="76" cy="62" r="2" fill="#4A4A4A"/>
+          
+          <!-- Child's smile -->
+          <path d="M 65 70 Q 70 74 75 70" stroke="#FF6B6B" stroke-width="1.5" fill="none"/>
+          
+          <!-- Child's body -->
+          <rect x="60" y="80" width="20" height="25" fill="#87CEEB" rx="8"/>
+          
+          <!-- Child's arms (gentle pose) -->
+          <ellipse cx="55" cy="88" rx="6" ry="12" fill="#FDBCB4" transform="rotate(-20 55 88)"/>
+          <ellipse cx="85" cy="88" rx="6" ry="12" fill="#FDBCB4" transform="rotate(20 85 88)"/>
+          
+          <!-- Child's legs -->
+          <rect x="64" y="102" width="6" height="18" fill="#4169E1" rx="3"/>
+          <rect x="70" y="102" width="6" height="18" fill="#4169E1" rx="3"/>
+          
+          <!-- Warm gentle glow around child -->
+          <circle cx="70" cy="75" r="35" fill="#FFE4B5" opacity="0.2"/>
         </svg>
       </div>
-      <div class="sentence-text">Santa is coming tonight.</div>
-      <button class="play-button" onclick="playAudio('sentence2')">
+      <div class="sentence-text">I like Christmas.</div>
+      <button class="play-button" onclick="playAudio('i-like-christmas')">
         <svg viewBox="0 0 24 24" class="play-icon">
           <polygon points="5,3 19,12 5,21" fill="currentColor"/>
         </svg>
@@ -56,19 +99,58 @@ featured_image: "/images/english-learning-icon.svg"
     
     <div class="sentence-card">
       <div class="sentence-image">
-        <svg viewBox="0 0 200 150" class="christmas-illustration">
-          <!-- Gift -->
-          <rect x="60" y="70" width="80" height="60" fill="#E91E63" rx="5"/>
-          <rect x="95" y="70" width="10" height="60" fill="#FCE4EC"/>
-          <rect x="60" y="95" width="80" height="10" fill="#FCE4EC"/>
-          <path d="M100,50 Q90,70 100,70 Q110,70 100,50" fill="#4CAF50"/>
-          <path d="M100,50 Q95,60 100,60 Q105,60 100,50" fill="#66BB6A"/>
-        </svg>
+        <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+      <!-- Warm Christmas lights and stars - flat illustration style -->
+      <!-- Very light background -->
+      <rect width="200" height="150" fill="#FFFDF8"/>
+      
+      <!-- Soft glowing lights - gentle and sparse -->
+      <!-- String of warm white lights -->
+      <path d="M 20 40 Q 60 30 100 35 Q 140 40 180 45" stroke="#F5DEB3" stroke-width="2" fill="none" opacity="0.6"/>
+      
+      <!-- Individual warm glowing lights -->
+      <circle cx="30" cy="37" r="4" fill="#FFF8DC" opacity="0.9"/>
+      <circle cx="30" cy="37" r="6" fill="#FFF8DC" opacity="0.3"/>
+      
+      <circle cx="60" cy="32" r="4" fill="#FFF8DC" opacity="0.9"/>
+      <circle cx="60" cy="32" r="6" fill="#FFF8DC" opacity="0.3"/>
+      
+      <circle cx="90" cy="34" r="4" fill="#FFF8DC" opacity="0.9"/>
+      <circle cx="90" cy="34" r="6" fill="#FFF8DC" opacity="0.3"/>
+      
+      <circle cx="120" cy="37" r="4" fill="#FFF8DC" opacity="0.9"/>
+      <circle cx="120" cy="37" r="6" fill="#FFF8DC" opacity="0.3"/>
+      
+      <circle cx="150" cy="41" r="4" fill="#FFF8DC" opacity="0.9"/>
+      <circle cx="150" cy="41" r="6" fill="#FFF8DC" opacity="0.3"/>
+      
+      <circle cx="170" cy="44" r="4" fill="#FFF8DC" opacity="0.9"/>
+      <circle cx="170" cy="44" r="6" fill="#FFF8DC" opacity="0.3"/>
+      
+      <!-- Gentle stars -->
+      <polygon points="40,80 41,83 44,83 42,85 43,88 40,86 37,88 38,85 36,83 39,83" fill="#FFFACD" opacity="0.7"/>
+      <polygon points="80,70 81,73 84,73 82,75 83,78 80,76 77,78 78,75 76,73 79,73" fill="#FFFACD" opacity="0.7"/>
+      <polygon points="130,75 131,78 134,78 132,80 133,83 130,81 127,83 128,80 126,78 129,78" fill="#FFFACD" opacity="0.7"/>
+      <polygon points="160,85 161,88 164,88 162,90 163,93 160,91 157,93 158,90 156,88 159,88" fill="#FFFACD" opacity="0.7"/>
+      
+      <!-- Additional gentle lights at bottom -->
+      <circle cx="50" cy="110" r="3" fill="#FFF8DC" opacity="0.8"/>
+      <circle cx="50" cy="110" r="5" fill="#FFF8DC" opacity="0.2"/>
+      
+      <circle cx="100" cy="120" r="3" fill="#FFF8DC" opacity="0.8"/>
+      <circle cx="100" cy="120" r="5" fill="#FFF8DC" opacity="0.2"/>
+      
+      <circle cx="150" cy="115" r="3" fill="#FFF8DC" opacity="0.8"/>
+      <circle cx="150" cy="115" r="5" fill="#FFF8DC" opacity="0.2"/>
+      
+      <!-- Gentle festive glow -->
+      <ellipse cx="100" cy="75" rx="80" ry="25" fill="#FFE4B5" opacity="0.1"/>
+    </svg>
       </div>
-      <div class="sentence-text">I love Christmas gifts.</div>
-      <button class="play-button" onclick="playAudio('sentence3')">
-        <svg viewBox="0 0 24 24" class="play-icon">
-          <polygon points="5,3 19,12 5,21" fill="currentColor"/>
+      <div class="sentence-text">Christmas is fun.</div>
+      <button class="play-button" onclick="playAudio('christmas-is-fun')">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8 5v14l11-7z"/>
         </svg>
       </button>
     </div>
@@ -254,14 +336,14 @@ function playAudio(sentenceId) {
     
     // Get the text content based on sentence ID
     switch(sentenceId) {
-      case 'sentence1':
-        utterance.text = "This is a Christmas tree.";
+      case 'its-christmas':
+        utterance.text = "It's Christmas.";
         break;
-      case 'sentence2':
-        utterance.text = "Santa is coming tonight.";
+      case 'i-like-christmas':
+        utterance.text = "I like Christmas.";
         break;
-      case 'sentence3':
-        utterance.text = "I love Christmas gifts.";
+      case 'christmas-is-fun':
+        utterance.text = "Christmas is fun.";
         break;
     }
     
