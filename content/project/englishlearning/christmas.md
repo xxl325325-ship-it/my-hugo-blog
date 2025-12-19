@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "ChristmasEnglishForChildren"
 date: 2025-01-01
 type: "christmas-english"
 description: "Fun and interactive Christmas English learning with simple sentences, cute visuals, and a friendly story — perfect for kids and parents."
