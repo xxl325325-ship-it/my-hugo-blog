@@ -53,6 +53,14 @@ menu:
     <h3>自我管理</h3>
     <p>时间管理和个人成长系统</p>
   </div>
+  
+  <div class="project-card">
+    <a href="/project/englishlearning/" style="text-decoration: none; color: inherit;">
+      <img src="/images/english-learning-icon.svg" alt="少儿英语启蒙">
+      <h3>少儿英语启蒙</h3>
+      <p>儿童英语教育方法和资源分享</p>
+    </a>
+  </div>
 </div>
 
 <style>
