@@ -68,3 +68,13 @@ description: "儿童英语教育方法和资源分享"
 💬 微信：xxl325325
 
 让我们一起为孩子的英语学习之路打下坚实的基础！
+
+---
+
+## 专题学习
+
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/project/englishlearning/christmas/" style="display: inline-block; background: #F48FB1; color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 25px; font-size: 1.2rem; transition: all 0.3s ease;">
+    🎄 Christmas Special - Learn Christmas English! 🎄
+  </a>
+</div>

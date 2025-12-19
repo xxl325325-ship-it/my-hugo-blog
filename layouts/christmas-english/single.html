@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    {{/* NOTE: the Site's title, and if there is a page title, that is set too */}}
+    <title>{{ block "title" . }}{{ .Site.Title}}{{ with .Params.Title }} | {{ . }}{{ end }}{{ end }}</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    {{ hugo.Generator }}
+    
+    {{/* NOTE: For production, the CSS will be compressed and concatenated */}}
+    {{ $styles := resources.Get "ananke/css/main.css" }}
+    {{ $customStyles := resources.Get "css/custom.css" }}
+    
+    {{ if $styles }}
+      {{ if hugo.IsProduction }}
+        {{ $styles = $styles | resources.Minify | resources.Fingerprint }}
+        <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+      {{ else }}
+        <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+      {{ end }}
+    {{ end }}
+    
+    {{ if $customStyles }}
+      {{ if hugo.IsProduction }}
+        {{ $customStyles = $customStyles | resources.Minify | resources.Fingerprint }}
+        <link rel="stylesheet" href="{{ $customStyles.RelPermalink }}">
+      {{ else }}
+        <link rel="stylesheet" href="{{ $customStyles.RelPermalink }}">
+      {{ end }}
+    {{ end }}
+
+    {{ block "head" . }}{{ end }}
+    
+    {{ if .Params.featured_image }}
+      <meta property="og:image" content="{{ .Params.featured_image }}">
+    {{ end }}
+    
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta itemprop="name" content="{{ .Title }}">
+    <meta itemprop="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    
+    {{ if .Params.featured_image }}
+      <meta itemprop="image" content="{{ .Params.featured_image }}">
+    {{ end }}
+    
+    {{/* NOTE: These Hugo Internal Templates can be found starting at https://github.com/gohugoio/hugo/tree/master/tpl/tplimpl/embedded/templates */}}
+    {{- template "_internal/opengraph.html" . -}}
+    {{- template "_internal/schema.html" . -}}
+    {{- template "_internal/twitter_cards.html" . -}}
+    
+    {{ if eq (getenv "HUGO_ENV") "production" }}
+      {{/* NOTE: Add Google Analytics or other tracking codes here */}}
+    {{ end }}
+  </head>
+
+  <body class="ma0 {{ $.Param "body_classes"  }}">
+    {{/* NOTE: The main content area */}}
+    <main class="pb7" role="main">
+      {{ .Content }}
+    </main>
+    
+    {{/* NOTE: Footer can be added here if needed */}}
+    
+    <script>
+    // Christmas English Learning Audio Functions
+    function playAudio(sentenceId) {
+      if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance();
+        
+        // Gentle settings for children
+        utterance.lang = 'en-US';
+        utterance.rate = 0.7;
+        utterance.pitch = 1.2;
+        utterance.volume = 0.6;
+        
+        // Get the text content based on sentence ID
+        switch(sentenceId) {
+          case 'sentence1':
+            utterance.text = "This is a Christmas tree.";
+            break;
+          case 'sentence2':
+            utterance.text = "Santa is coming tonight.";
+            break;
+          case 'sentence3':
+            utterance.text = "I love Christmas gifts.";
+            break;
+        }
+        
+        // Play the audio
+        speechSynthesis.speak(utterance);
+        
+        // Add gentle visual feedback
+        const button = event.currentTarget;
+        button.style.transform = 'scale(0.9)';
+        button.style.opacity = '0.8';
+        setTimeout(() => {
+          button.style.transform = 'scale(1)';
+          button.style.opacity = '1';
+        }, 200);
+      } else {
+        // Gentle visual feedback for unsupported browsers
+        const button = event.currentTarget;
+        button.style.background = '#FFE0B2';
+        setTimeout(() => {
+          button.style.background = '#F48FB1';
+        }, 1000);
+      }
+    }
+
+    // Add gentle animations on page load
+    window.addEventListener('load', function() {
+      const cards = document.querySelectorAll('.sentence-card');
+      cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        
+        setTimeout(() => {
+          card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, index * 300);
+      });
+      
+      // Animate title
+      const title = document.querySelector('.page-title');
+      if (title) {
+        title.style.opacity = '0';
+        title.style.transform = 'scale(0.9)';
+        setTimeout(() => {
+          title.style.transition = 'opacity 1s ease, transform 1s ease';
+          title.style.opacity = '1';
+          title.style.transform = 'scale(1)';
+        }, 500);
+      }
+    });
+    
+    // Gentle hover effects
+    document.addEventListener('DOMContentLoaded', function() {
+      const buttons = document.querySelectorAll('.play-button');
+      buttons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+          this.style.transform = 'scale(1.05)';
+        });
+        button.addEventListener('mouseleave', function() {
+          this.style.transform = 'scale(1)';
+        });
+      });
+    });
+    </script>
+  </body>
+</html>

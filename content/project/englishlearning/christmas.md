@@ -1,0 +1,290 @@
+---
+title: "Christmas Learning"
+date: 2025-01-01
+type: "page"
+layout: "christmas-english"
+description: "Learn English about Christmas - Fun and gentle learning for kids aged 3-6"
+featured_image: "/images/english-learning-icon.svg"
+---
+
+<div class="christmas-container">
+  <h1 class="page-title">Christmas Time</h1>
+  
+  <div class="learning-sentences">
+    <div class="sentence-card">
+      <div class="sentence-image">
+        <svg viewBox="0 0 200 150" class="christmas-illustration">
+          <!-- Christmas tree -->
+          <polygon points="100,30 70,70 130,70" fill="#7CB342"/>
+          <polygon points="100,50 60,90 140,90" fill="#8BC34A"/>
+          <polygon points="100,70 50,110 150,110" fill="#9CCC65"/>
+          <rect x="95" y="110" width="10" height="20" fill="#8D6E63"/>
+          <circle cx="85" cy="60" r="3" fill="#FFE082"/>
+          <circle cx="115" cy="75" r="3" fill="#FFCCBC"/>
+          <circle cx="95" cy="90" r="3" fill="#B2DFDB"/>
+        </svg>
+      </div>
+      <div class="sentence-text">This is a Christmas tree.</div>
+      <button class="play-button" onclick="playAudio('sentence1')">
+        <svg viewBox="0 0 24 24" class="play-icon">
+          <polygon points="5,3 19,12 5,21" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="sentence-card">
+      <div class="sentence-image">
+        <svg viewBox="0 0 200 150" class="christmas-illustration">
+          <!-- Santa -->
+          <circle cx="100" cy="80" r="25" fill="#FFCCBC"/>
+          <path d="M75,80 Q100,60 125,80" fill="white"/>
+          <path d="M70,85 Q100,65 130,85" fill="#F44336"/>
+          <circle cx="90" cy="75" r="3" fill="#333"/>
+          <circle cx="110" cy="75" r="3" fill="#333"/>
+          <path d="M95,85 Q100,90 105,85" fill="#333"/>
+          <rect x="85" y="105" width="30" height="25" fill="#F44336"/>
+          <rect x="75" y="110" width="50" height="8" fill="white"/>
+        </svg>
+      </div>
+      <div class="sentence-text">Santa is coming tonight.</div>
+      <button class="play-button" onclick="playAudio('sentence2')">
+        <svg viewBox="0 0 24 24" class="play-icon">
+          <polygon points="5,3 19,12 5,21" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="sentence-card">
+      <div class="sentence-image">
+        <svg viewBox="0 0 200 150" class="christmas-illustration">
+          <!-- Gift -->
+          <rect x="60" y="70" width="80" height="60" fill="#E91E63" rx="5"/>
+          <rect x="95" y="70" width="10" height="60" fill="#FCE4EC"/>
+          <rect x="60" y="95" width="80" height="10" fill="#FCE4EC"/>
+          <path d="M100,50 Q90,70 100,70 Q110,70 100,50" fill="#4CAF50"/>
+          <path d="M100,50 Q95,60 100,60 Q105,60 100,50" fill="#66BB6A"/>
+        </svg>
+      </div>
+      <div class="sentence-text">I love Christmas gifts.</div>
+      <button class="play-button" onclick="playAudio('sentence3')">
+        <svg viewBox="0 0 24 24" class="play-icon">
+          <polygon points="5,3 19,12 5,21" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  
+  <div class="closing-message">
+    Merry Christmas and Happy Learning!
+  </div>
+</div>
+
+<style>
+.christmas-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.page-title {
+  font-size: 3rem;
+  color: #D32F2F;
+  text-align: center;
+  margin-bottom: 3rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  font-weight: 300;
+}
+
+.learning-sentences {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sentence-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  min-width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.sentence-card:hover {
+  transform: translateY(-5px);
+}
+
+.sentence-image {
+  width: 120px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.christmas-illustration {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+}
+
+.sentence-text {
+  font-size: 1.5rem;
+  color: #37474F;
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.play-button {
+  background: #F48FB1;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.play-button:hover {
+  background: #F06292;
+  transform: scale(1.1);
+}
+
+.play-button:active {
+  transform: scale(0.95);
+}
+
+.play-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 3px;
+}
+
+.closing-message {
+  font-size: 2rem;
+  color: #2E7D32;
+  text-align: center;
+  font-weight: 300;
+  margin-top: 2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .learning-sentences {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+  }
+  
+  .sentence-card {
+    min-width: 200px;
+    padding: 1.5rem;
+  }
+  
+  .closing-message {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .christmas-container {
+    padding: 1rem;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .sentence-text {
+    font-size: 1.2rem;
+  }
+  
+  .play-button {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .play-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+</style>
+
+<script>
+function playAudio(sentenceId) {
+  // Create audio context for speech synthesis
+  if ('speechSynthesis' in window) {
+    const utterance = new SpeechSynthesisUtterance();
+    
+    // Set voice and speed for children
+    utterance.lang = 'en-US';
+    utterance.rate = 0.8;
+    utterance.pitch = 1.1;
+    utterance.volume = 0.8;
+    
+    // Get the text content based on sentence ID
+    switch(sentenceId) {
+      case 'sentence1':
+        utterance.text = "This is a Christmas tree.";
+        break;
+      case 'sentence2':
+        utterance.text = "Santa is coming tonight.";
+        break;
+      case 'sentence3':
+        utterance.text = "I love Christmas gifts.";
+        break;
+    }
+    
+    // Play the audio
+    speechSynthesis.speak(utterance);
+    
+    // Add visual feedback
+    const button = event.currentTarget;
+    button.style.transform = 'scale(0.9)';
+    setTimeout(() => {
+      button.style.transform = 'scale(1)';
+    }, 200);
+  } else {
+    alert('Audio playback is not supported in your browser.');
+  }
+}
+
+// Add some gentle animations
+window.addEventListener('load', function() {
+  const cards = document.querySelectorAll('.sentence-card');
+  cards.forEach((card, index) => {
+    setTimeout(() => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      
+      setTimeout(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, 100);
+    }, index * 200);
+  });
+});
+</script>
