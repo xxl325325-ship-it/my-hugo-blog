@@ -82,44 +82,47 @@ featured_image: "/images/english-learning-icon.svg"
 <style>
 .christmas-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+  background: linear-gradient(135deg, #FFF8F0 0%, #F0F8FF 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem;
   box-sizing: border-box;
   font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 .page-title {
-  font-size: 3rem;
-  color: #D32F2F;
+  font-size: 2.5rem;
+  color: #D2691E;
   text-align: center;
-  margin-bottom: 3rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   font-weight: 300;
+  opacity: 0.9;
 }
 
 .learning-sentences {
   display: flex;
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .sentence-card {
-  background: white;
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 25px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
-  min-width: 250px;
+  gap: 1rem;
+  min-width: 280px;
   transition: transform 0.3s ease;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,182,193,0.2);
 }
 
 .sentence-card:hover {
@@ -127,8 +130,8 @@ featured_image: "/images/english-learning-icon.svg"
 }
 
 .sentence-image {
-  width: 120px;
-  height: 90px;
+  width: 200px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -137,53 +140,58 @@ featured_image: "/images/english-learning-icon.svg"
 .christmas-illustration {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
 }
 
 .sentence-text {
-  font-size: 1.5rem;
-  color: #37474F;
+  font-size: 1.1rem;
+  color: #A0826D;
   text-align: center;
-  font-weight: 400;
+  font-weight: normal;
   line-height: 1.4;
+  opacity: 0.7;
 }
 
 .play-button {
-  background: #F48FB1;
+  background: linear-gradient(45deg, #FFB6C1, #FFC0CB);
   border: none;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  border-radius: 50px;
+  padding: 12px 25px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
   color: white;
+  font-size: 1rem;
+  box-shadow: 0 3px 12px rgba(255,182,193,0.3);
+  margin-top: 10px;
 }
 
 .play-button:hover {
-  background: #F06292;
-  transform: scale(1.1);
+  background: linear-gradient(45deg, #FFC0CB, #FFD1DC);
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(255,182,193,0.4);
 }
 
 .play-button:active {
-  transform: scale(0.95);
+  transform: scale(0.98);
 }
 
 .play-icon {
-  width: 24px;
-  height: 24px;
-  margin-left: 3px;
+  width: 20px;
+  height: 20px;
+  margin-left: 2px;
 }
 
 .closing-message {
-  font-size: 2rem;
-  color: #2E7D32;
+  font-size: 1.5rem;
+  color: #D2691E;
   text-align: center;
   font-weight: 300;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  opacity: 0.8;
 }
 
 @media (max-width: 768px) {
