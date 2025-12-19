@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Test</title>
+</head>
+<body>
+    <h1>JavaScript Test Page</h1>
+    <button id="test-button" onclick="alert('Button clicked!')">Click me for alert</button>
+    <div id="status">Status: Loading...</div>
+    
+    <script>
+        console.log('=== JAVASCRIPT TEST STARTED ===');
+        alert('JavaScript is working! If you see this alert, the basic JavaScript execution is fine.');
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOMContentLoaded fired');
+            document.getElementById('status').textContent = 'Status: DOMContentLoaded fired successfully';
+            
+            // Test button visibility
+            const button = document.getElementById('test-button');
+            console.log('Button found:', !!button);
+            button.style.background = 'yellow';
+            button.style.border = '3px solid red';
+        });
+        
+        // Test after 2 seconds
+        setTimeout(() => {
+            console.log('2 second timeout fired');
+            document.getElementById('status').textContent = 'Status: 2 second timeout fired';
+        }, 2000);
+    </script>
+</body>
+</html>

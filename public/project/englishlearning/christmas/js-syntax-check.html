@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Syntax Check</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .error { color: red; }
+        .success { color: green; }
+        .section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        #output { background: #f8f9fa; padding: 10px; font-family: monospace; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Syntax Check for Christmas Page</h1>
+    
+    <div class="section">
+        <h2>Testing JavaScript from Christmas Page</h2>
+        <div id="test-results"></div>
+    </div>
+    
+    <div class="section">
+        <h2>Console Output</h2>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        // Capture console output
+        const outputDiv = document.getElementById('output');
+        const originalLog = console.log;
+        const originalError = console.error;
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            outputDiv.textContent += args.join(' ') + '\n';
+        };
+        
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            outputDiv.textContent += 'ERROR: ' + args.join(' ') + '\n';
+        };
+        
+        // Test the JavaScript code from the Christmas page
+        function testChristmasJavaScript() {
+            const results = document.getElementById('test-results');
+            let html = '';
+            
+            try {
+                console.log('=== Testing Christmas Page JavaScript ===');
+                
+                // Test 1: Basic variable declaration (from christmasContent)
+                const testContent = {
+                    1: {
+                        title: "Christmas Learning - Day 1!",
+                        description: "",
+                        sentences: [
+                            { text: "It's Christmas.", audio: "its-christmas", image: "tree" }
+                        ],
+                        story: null,
+                        showStory: false
+                    }
+                };
+                console.log('✓ Variable declaration works');
+                html += '<p class="success">✓ Variable declaration works</p>';
+                
+                // Test 2: Array and object access
+                let currentDay = 1;
+                let completedDays = [];
+                console.log('✓ Array/object access works');
+                html += '<p class="success">✓ Array/object access works</p>';
+                
+                // Test 3: LocalStorage access (might fail in some environments)
+                try {
+                    const testData = JSON.parse(localStorage.getItem('test') || '[]');
+                    console.log('✓ LocalStorage access works');
+                    html += '<p class="success">✓ LocalStorage access works</p>';
+                } catch (e) {
+                    console.log('⚠ LocalStorage access failed (expected in some environments)');
+                    html += '<p class="warning">⚠ LocalStorage access failed (expected)</p>';
+                }
+                
+                // Test 4: DOM functions
+                const testDiv = document.createElement('div');
+                testDiv.id = 'test-element';
+                document.body.appendChild(testDiv);
+                
+                const foundElement = document.getElementById('test-element');
+                const querySelector = document.querySelector('div');
+                
+                if (foundElement && querySelector) {
+                    console.log('✓ DOM functions work');
+                    html += '<p class="success">✓ DOM functions work</p>';
+                } else {
+                    console.log('✗ DOM functions failed');
+                    html += '<p class="error">✗ DOM functions failed</p>';
+                }
+                
+                // Test 5: Event listeners
+                let eventTestPassed = false;
+                testDiv.addEventListener('click', function() {
+                    eventTestPassed = true;
+                });
+                
+                // Simulate click
+                testDiv.click();
+                
+                if (eventTestPassed) {
+                    console.log('✓ Event listeners work');
+                    html += '<p class="success">✓ Event listeners work</p>';
+                } else {
+                    console.log('✗ Event listeners failed');
+                    html += '<p class="error">✗ Event listeners failed</p>';
+                }
+                
+                // Clean up
+                testDiv.remove();
+                
+                console.log('=== All JavaScript syntax tests passed! ===');
+                html += '<h3 class="success">All basic JavaScript syntax tests passed!</h3>';
+                
+            } catch (error) {
+                console.error('JavaScript error:', error);
+                html += `<p class="error">JavaScript Error: ${error.message}</p>`;
+                html += `<p class="error">Stack: ${error.stack}</p>`;
+            }
+            
+            results.innerHTML = html;
+        }
+        
+        // Run tests when page loads
+        document.addEventListener('DOMContentLoaded', testChristmasJavaScript);
+        
+        // Global error handler
+        window.addEventListener('error', function(event) {
+            console.error('Global error:', event.message, 'at line', event.lineno, 'in', event.filename);
+        });
+        
+        // Test unhandled promise rejections
+        window.addEventListener('unhandledrejection', function(event) {
+            console.error('Unhandled promise rejection:', event.reason);
+        });
+    </script>
+</body>
+</html>

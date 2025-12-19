@@ -1,9 +1,8 @@
 ---
-title: "Christmas Learning"
+title: ""
 date: 2025-01-01
-type: "page"
-layout: "christmas-english"
-description: "Learn English about Christmas - Fun and gentle learning for kids aged 3-6"
+type: "christmas-english"
+description: "Fun and interactive Christmas English learning with simple sentences, cute visuals, and a friendly story — perfect for kids and parents."
 featured_image: "/images/english-learning-icon.svg"
 ---
 
@@ -100,52 +99,66 @@ featured_image: "/images/english-learning-icon.svg"
     <div class="sentence-card">
       <div class="sentence-image">
         <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
-      <!-- Warm Christmas lights and stars - flat illustration style -->
-      <!-- Very light background -->
-      <rect width="200" height="150" fill="#FFFDF8"/>
-      
-      <!-- Soft glowing lights - gentle and sparse -->
-      <!-- String of warm white lights -->
-      <path d="M 20 40 Q 60 30 100 35 Q 140 40 180 45" stroke="#F5DEB3" stroke-width="2" fill="none" opacity="0.6"/>
-      
-      <!-- Individual warm glowing lights -->
-      <circle cx="30" cy="37" r="4" fill="#FFF8DC" opacity="0.9"/>
-      <circle cx="30" cy="37" r="6" fill="#FFF8DC" opacity="0.3"/>
-      
-      <circle cx="60" cy="32" r="4" fill="#FFF8DC" opacity="0.9"/>
-      <circle cx="60" cy="32" r="6" fill="#FFF8DC" opacity="0.3"/>
-      
-      <circle cx="90" cy="34" r="4" fill="#FFF8DC" opacity="0.9"/>
-      <circle cx="90" cy="34" r="6" fill="#FFF8DC" opacity="0.3"/>
-      
-      <circle cx="120" cy="37" r="4" fill="#FFF8DC" opacity="0.9"/>
-      <circle cx="120" cy="37" r="6" fill="#FFF8DC" opacity="0.3"/>
-      
-      <circle cx="150" cy="41" r="4" fill="#FFF8DC" opacity="0.9"/>
-      <circle cx="150" cy="41" r="6" fill="#FFF8DC" opacity="0.3"/>
-      
-      <circle cx="170" cy="44" r="4" fill="#FFF8DC" opacity="0.9"/>
-      <circle cx="170" cy="44" r="6" fill="#FFF8DC" opacity="0.3"/>
-      
-      <!-- Gentle stars -->
-      <polygon points="40,80 41,83 44,83 42,85 43,88 40,86 37,88 38,85 36,83 39,83" fill="#FFFACD" opacity="0.7"/>
-      <polygon points="80,70 81,73 84,73 82,75 83,78 80,76 77,78 78,75 76,73 79,73" fill="#FFFACD" opacity="0.7"/>
-      <polygon points="130,75 131,78 134,78 132,80 133,83 130,81 127,83 128,80 126,78 129,78" fill="#FFFACD" opacity="0.7"/>
-      <polygon points="160,85 161,88 164,88 162,90 163,93 160,91 157,93 158,90 156,88 159,88" fill="#FFFACD" opacity="0.7"/>
-      
-      <!-- Additional gentle lights at bottom -->
-      <circle cx="50" cy="110" r="3" fill="#FFF8DC" opacity="0.8"/>
-      <circle cx="50" cy="110" r="5" fill="#FFF8DC" opacity="0.2"/>
-      
-      <circle cx="100" cy="120" r="3" fill="#FFF8DC" opacity="0.8"/>
-      <circle cx="100" cy="120" r="5" fill="#FFF8DC" opacity="0.2"/>
-      
-      <circle cx="150" cy="115" r="3" fill="#FFF8DC" opacity="0.8"/>
-      <circle cx="150" cy="115" r="5" fill="#FFF8DC" opacity="0.2"/>
-      
-      <!-- Gentle festive glow -->
-      <ellipse cx="100" cy="75" rx="80" ry="25" fill="#FFE4B5" opacity="0.1"/>
-    </svg>
+          <!-- Beautiful Christmas gift box with warm colors - flat cartoon style -->
+          <!-- Soft gradient background -->
+          <defs>
+            <linearGradient id="giftBg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#FFF8F0;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#FFF0E6;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="boxGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#DC143C;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#B22222;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="ribbonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          
+          <rect width="200" height="150" fill="url(#giftBg)"/>
+          
+          <!-- Gift box base -->
+          <rect x="60" y="85" width="80" height="45" fill="url(#boxGradient)" rx="5"/>
+          
+          <!-- Gift box lid -->
+          <rect x="55" y="65" width="90" height="25" fill="url(#boxGradient)" rx="5"/>
+          
+          <!-- Golden ribbon vertical -->
+          <rect x="95" y="65" width="10" height="65" fill="url(#ribbonGradient)" rx="2"/>
+          
+          <!-- Golden ribbon horizontal -->
+          <rect x="55" y="87" width="90" height="10" fill="url(#ribbonGradient)" rx="2"/>
+          
+          <!-- Beautiful bow on top -->
+          <!-- Left bow loop -->
+          <ellipse cx="90" cy="55" rx="12" ry="8" fill="url(#ribbonGradient)" transform="rotate(-20 90 55)"/>
+          <!-- Right bow loop -->
+          <ellipse cx="110" cy="55" rx="12" ry="8" fill="url(#ribbonGradient)" transform="rotate(20 110 55)"/>
+          <!-- Bow center -->
+          <ellipse cx="100" cy="58" rx="6" ry="4" fill="#FF8C00"/>
+          
+          <!-- Gift tag -->
+          <rect x="115" y="45" width="25" height="15" fill="#FFFACD" rx="3"/>
+          <line x1="120" y1="60" x2="120" y2="70" stroke="#D2691E" stroke-width="1"/>
+          <circle cx="122" cy="50" r="1" fill="#DC143C"/>
+          <circle cx="127" cy="50" r="1" fill="#DC143C"/>
+          <circle cx="122" cy="53" r="1" fill="#DC143C"/>
+          <circle cx="127" cy="53" r="1" fill="#DC143C"/>
+          
+          <!-- Sparkles and magic -->
+          <circle cx="40" cy="30" r="2" fill="#FFD700" opacity="0.8"/>
+          <circle cx="40" cy="30" r="4" fill="#FFD700" opacity="0.3"/>
+          <circle cx="160" cy="25" r="2" fill="#FFD700" opacity="0.8"/>
+          <circle cx="160" cy="25" r="4" fill="#FFD700" opacity="0.3"/>
+          <circle cx="30" cy="70" r="1.5" fill="#FFA500" opacity="0.7"/>
+          <circle cx="170" cy="80" r="1.5" fill="#FFA500" opacity="0.7"/>
+          <circle cx="50" cy="120" r="1" fill="#FFD700" opacity="0.6"/>
+          <circle cx="150" cy="110" r="1" fill="#FFD700" opacity="0.6"/>
+          
+          <!-- Soft glow effect -->
+          <ellipse cx="100" cy="75" rx="60" ry="30" fill="#FFE4B5" opacity="0.1"/>
+        </svg>
       </div>
       <div class="sentence-text">Christmas is fun.</div>
       <button class="play-button" onclick="playAudio('christmas-is-fun')">
@@ -156,40 +169,173 @@ featured_image: "/images/english-learning-icon.svg"
     </div>
   </div>
   
-  <div class="closing-message">
-    Merry Christmas and Happy Learning!
+  <!-- Story section - only visible after completing certain days -->
+  <div class="story-section" id="story-section" style="display: none;">
+    <h2 class="story-title">📖 Little Story Time</h2>
+    <div class="story-content" id="story-content"></div>
+    <button class="play-button story-play" onclick="playStory(event)">
+      <svg viewBox="0 0 24 24" class="play-icon">
+        <polygon points="5,3 19,12 5,21" fill="currentColor"/>
+      </svg>
+      Play Full Story
+    </button>
   </div>
+  
+  <!-- Navigation buttons -->
+  <div class="navigation-buttons">
+    <button class="nav-button" id="prev-button" onclick="previousDay(event)" style="display: none;">
+      ← Previous Day
+    </button>
+    <button class="nav-button complete-button" id="complete-button" onclick="completeDay(event)">
+      Complete Today's Learning!
+    </button>
+    <button class="nav-button" id="next-button" onclick="nextDay(event)">
+      Next Day →
+    </button>
+  </div>
+  
+
 </div>
 
 <style>
+/* Hide navigation bar for Christmas learning page */
+body.christmas-english-page header,
+body.christmas-english-page nav,
+body.christmas-english-page .site-header,
+body.christmas-english-page .site-navigation {
+  display: none !important;
+}
+
 .christmas-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #FFF8F0 0%, #F0F8FF 100%);
+  background: linear-gradient(135deg, #1E3A8A 0%, #DC2626 50%, #059669 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem;
   box-sizing: border-box;
   font-family: 'Comic Sans MS', cursive, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.christmas-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="white" opacity="0.8"/><circle cx="30" cy="20" r="1" fill="white" opacity="0.6"/><circle cx="50" cy="15" r="1" fill="white" opacity="0.7"/><circle cx="70" cy="25" r="1" fill="white" opacity="0.5"/><circle cx="90" cy="30" r="1" fill="white" opacity="0.9"/><circle cx="20" cy="40" r="1" fill="white" opacity="0.4"/><circle cx="40" cy="35" r="1" fill="white" opacity="0.8"/><circle cx="60" cy="45" r="1" fill="white" opacity="0.6"/><circle cx="80" cy="40" r="1" fill="white" opacity="0.7"/><circle cx="15" cy="60" r="1" fill="white" opacity="0.5"/><circle cx="35" cy="55" r="1" fill="white" opacity="0.9"/><circle cx="55" cy="65" r="1" fill="white" opacity="0.4"/><circle cx="75" cy="60" r="1" fill="white" opacity="0.8"/><circle cx="95" cy="70" r="1" fill="white" opacity="0.6"/><circle cx="25" cy="80" r="1" fill="white" opacity="0.7"/><circle cx="45" cy="85" r="1" fill="white" opacity="0.5"/><circle cx="65" cy="75" r="1" fill="white" opacity="0.9"/><circle cx="85" cy="90" r="1" fill="white" opacity="0.4"/></svg>');
+  animation: snowfall 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes snowfall {
+  0% { transform: translateY(-100vh); }
+  100% { transform: translateY(100vh); }
 }
 
 .page-title {
-  font-size: 2.5rem;
-  color: #D2691E;
+  font-size: 3rem;
+  color: #DC2626;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  font-weight: bold;
+  opacity: 0.95;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #96CEB4);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient 3s ease infinite;
+  letter-spacing: 1px;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.day-description {
+  font-size: 1.2rem;
+  color: #FFFFFF;
   text-align: center;
   margin-bottom: 2rem;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-  font-weight: 300;
-  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  font-weight: 400;
 }
 
 .learning-sentences {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  align-items: center;
+}
+
+.story-section {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  max-width: 600px;
+  text-align: center;
+}
+
+.story-title {
+  color: #DC2626;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.story-content {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.progress-indicator {
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+}
+
+.progress-bar {
+  width: 200px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #DC2626, #059669);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  width: 0%;
+}
+
+.progress-text {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
 }
 
 .sentence-card {
@@ -201,14 +347,18 @@ featured_image: "/images/english-learning-icon.svg"
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  min-width: 280px;
-  transition: transform 0.3s ease;
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,182,193,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 380px;
+  height: 320px;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .sentence-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
 .sentence-image {
@@ -217,6 +367,19 @@ featured_image: "/images/english-learning-icon.svg"
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+.sentence-image svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
 }
 
 .christmas-illustration {
@@ -323,16 +486,21 @@ featured_image: "/images/english-learning-icon.svg"
 </style>
 
 <script>
+// Christmas English Learning - Global Variables
+let playedSentences = new Set();
+let currentDay = 1;
+let totalDays = 6;
+
+// Christmas English Learning Audio Functions
 function playAudio(sentenceId) {
-  // Create audio context for speech synthesis
   if ('speechSynthesis' in window) {
     const utterance = new SpeechSynthesisUtterance();
     
-    // Set voice and speed for children
+    // Gentle settings for children
     utterance.lang = 'en-US';
-    utterance.rate = 0.8;
-    utterance.pitch = 1.1;
-    utterance.volume = 0.8;
+    utterance.rate = 0.7;
+    utterance.pitch = 1.2;
+    utterance.volume = 0.6;
     
     // Get the text content based on sentence ID
     switch(sentenceId) {
@@ -350,31 +518,121 @@ function playAudio(sentenceId) {
     // Play the audio
     speechSynthesis.speak(utterance);
     
-    // Add visual feedback
+    // Track that this sentence has been played
+    playedSentences.add(sentenceId);
+    
+    // Add gentle visual feedback
     const button = event.currentTarget;
     button.style.transform = 'scale(0.9)';
+    button.style.opacity = '0.8';
     setTimeout(() => {
       button.style.transform = 'scale(1)';
+      button.style.opacity = '1';
     }, 200);
+    
+    // Update completion button state
+    updateCompletionButton();
   } else {
-    alert('Audio playback is not supported in your browser.');
+    // Gentle visual feedback for unsupported browsers
+    const button = event.currentTarget;
+    button.style.background = '#FFE0B2';
+    setTimeout(() => {
+      button.style.background = '#F48FB1';
+    }, 300);
   }
 }
 
-// Add some gentle animations
-window.addEventListener('load', function() {
-  const cards = document.querySelectorAll('.sentence-card');
-  cards.forEach((card, index) => {
-    setTimeout(() => {
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(20px)';
-      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      
-      setTimeout(() => {
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-      }, 100);
-    }, index * 200);
-  });
+// Update completion button based on played sentences
+function updateCompletionButton() {
+  const completeButton = document.getElementById('complete-button');
+  // const progressText = document.getElementById('progress-text');
+  
+  if (playedSentences.size >= 3) {
+    completeButton.disabled = false;
+    completeButton.style.opacity = '1';
+    completeButton.style.cursor = 'pointer';
+  } else {
+    completeButton.disabled = true;
+    completeButton.style.opacity = '0.5';
+    completeButton.style.cursor = 'not-allowed';
+  }
+  
+  // Update progress text 已移除进度条
+  // if (progressText) {
+  //   progressText.textContent = `Day ${currentDay} of ${totalDays} - ${playedSentences.size}/3 sentences played`;
+  // }
+}
+
+// Complete current day
+function completeDay(event) {
+  event.preventDefault();
+  
+  if (playedSentences.size < 3) {
+    alert('Please listen to all 3 sentences first!');
+    return;
+  }
+  
+  // Show completion message
+  const container = document.querySelector('.christmas-container');
+  const completionMessage = document.createElement('div');
+  completionMessage.className = 'completion-message';
+  completionMessage.innerHTML = `
+    <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                background: linear-gradient(135deg, #DC2626, #059669); 
+                color: white; padding: 2rem; border-radius: 20px; 
+                text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+                z-index: 1000; font-family: 'Comic Sans MS', cursive;">
+      <h2 style="margin: 0 0 1rem 0; font-size: 1.8rem;">🎉 Day ${currentDay} Complete! 🎉</h2>
+      <p style="margin: 0; font-size: 1.2rem;">Great job! You're doing amazing!</p>
+      <div style="margin-top: 1rem; font-size: 2rem;">⭐⭐⭐</div>
+    </div>
+  `;
+  
+  container.appendChild(completionMessage);
+  
+  // Remove message after 3 seconds and reset for next day
+  setTimeout(() => {
+    completionMessage.remove();
+    
+    // Reset for next day
+    playedSentences.clear();
+    currentDay++;
+    
+    if (currentDay <= totalDays) {
+      updateCompletionButton();
+      // Here you would typically load the next day's content
+      // For now, just show a message
+      alert(`Ready for Day ${currentDay}! Let's continue learning!`);
+    } else {
+      // All days completed
+      alert('🎄 Congratulations! You completed all 6 days of Christmas learning! 🎄');
+    }
+  }, 3000);
+}
+
+// Navigation functions
+function previousDay(event) {
+  event.preventDefault();
+  if (currentDay > 1) {
+    currentDay--;
+    playedSentences.clear();
+    updateCompletionButton();
+    // Here you would typically load the previous day's content
+  }
+}
+
+function nextDay(event) {
+  event.preventDefault();
+  if (currentDay < totalDays) {
+    currentDay++;
+    playedSentences.clear();
+    updateCompletionButton();
+    // Here you would typically load the next day's content
+  }
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+  updateCompletionButton();
 });
 </script>

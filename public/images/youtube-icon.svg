@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <circle cx="50" cy="50" r="45" fill="#FF0000"/>
-  <path d="M40 35 L70 50 L40 65 Z" fill="white"/>
-  <text x="50" y="85" text-anchor="middle" font-size="12" fill="white">YT</text>
-</svg>

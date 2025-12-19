@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Test - Christmas Buttons</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 2px solid #ccc; border-radius: 5px; }
+        .success { background-color: #d4edda; border-color: #c3e6cb; }
+        .error { background-color: #f8d7da; border-color: #f5c6cb; }
+        .warning { background-color: #fff3cd; border-color: #ffeeba; }
+        #console-output { background: #f8f9fa; border: 1px solid #dee2e6; padding: 10px; font-family: monospace; white-space: pre-wrap; max-height: 300px; overflow-y: auto; }
+        button { margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; }
+        .nav-button { background: #007bff; color: white; }
+        .test-button { background: #28a745; color: white; }
+    </style>
+</head>
+<body>
+    <h1>DOM Test - Christmas Buttons</h1>
+    
+    <div class="test-section">
+        <h2>Test 1: Basic DOM Elements</h2>
+        <div id="test1-results"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 2: Button Creation and Visibility</h2>
+        <div id="test2-results"></div>
+        <div class="navigation-buttons" id="test-nav-buttons">
+            <button class="nav-button" id="test-prev-button">← Previous</button>
+            <button class="nav-button complete-button" id="test-complete-button">Complete!</button>
+            <button class="nav-button" id="test-next-button">Next →</button>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 3: JavaScript Execution</h2>
+        <div id="test3-results"></div>
+        <button onclick="runJavaScriptTest()" class="test-button">Run JavaScript Test</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Console Output</h2>
+        <div id="console-output"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Live Button Status</h2>
+        <div id="live-status"></div>
+    </div>
+
+    <script>
+        // Override console.log to display in page
+        const consoleOutput = document.getElementById('console-output');
+        const originalConsoleLog = console.log;
+        const originalConsoleError = console.error;
+        
+        console.log = function(...args) {
+            originalConsoleLog.apply(console, args);
+            consoleOutput.textContent += args.join(' ') + '\n';
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        };
+        
+        console.error = function(...args) {
+            originalConsoleError.apply(console, args);
+            consoleOutput.textContent += 'ERROR: ' + args.join(' ') + '\n';
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        };
+        
+        // Test 1: Basic DOM elements
+        function testBasicDOM() {
+            const results = document.getElementById('test1-results');
+            let html = '';
+            
+            // Check basic document properties
+            html += `<p>document.body: ${!!document.body ? '<span class="success">✓ Found</span>' : '<span class="error">✗ Not found</span>'}</p>`;
+            html += `<p>document.head: ${!!document.head ? '<span class="success">✓ Found</span>' : '<span class="error">✗ Not found</span>'}</p>`;
+            html += `<p>document.documentElement: ${!!document.documentElement ? '<span class="success">✓ Found</span>' : '<span class="error">✗ Not found</span>'}</p>`;
+            
+            // Check if querySelector works
+            const testDiv = document.querySelector('.test-section');
+            html += `<p>document.querySelector('.test-section'): ${!!testDiv ? '<span class="success">✓ Working</span>' : '<span class="error">✗ Not working</span>'}</p>`;
+            
+            // Check if getElementById works
+            const resultsDiv = document.getElementById('test1-results');
+            html += `<p>document.getElementById('test1-results'): ${!!resultsDiv ? '<span class="success">✓ Working</span>' : '<span class="error">✗ Not working</span>'}</p>`;
+            
+            results.innerHTML = html;
+            console.log('Test 1 completed: Basic DOM check');
+        }
+        
+        // Test 2: Button visibility
+        function testButtonVisibility() {
+            const results = document.getElementById('test2-results');
+            let html = '';
+            
+            const navButtons = document.querySelector('.navigation-buttons');
+            const prevButton = document.getElementById('test-prev-button');
+            const completeButton = document.getElementById('test-complete-button');
+            const nextButton = document.getElementById('test-next-button');
+            
+            html += `<p>Navigation container: ${!!navButtons ? '<span class="success">✓ Found</span>' : '<span class="error">✗ Not found</span>'}</p>`;
+            html += `<p>Previous button: ${!!prevButton ? '<span class="success">✓ Found</span>' : '<span class="error">✗ Not found</span>'}</p>`;
+            html += `<p>Complete button: ${!!completeButton ? '<span class="success">✓ Found</span>' : '<span class="error">✗ Not found</span>'}</p>`;
+            html += `<p>Next button: ${!!nextButton ? '<span class="success">✓ Found</span>' : '<span class="error">✗ Not found</span>'}</p>`;
+            
+            if (prevButton) {
+                const computedStyle = window.getComputedStyle(prevButton);
+                html += `<p>Previous button computed display: ${computedStyle.display}</p>`;
+                html += `<p>Previous button computed visibility: ${computedStyle.visibility}</p>`;
+                html += `<p>Previous button computed opacity: ${computedStyle.opacity}</p>`;
+            }
+            
+            results.innerHTML = html;
+            console.log('Test 2 completed: Button visibility check');
+        }
+        
+        // Test 3: JavaScript execution
+        function runJavaScriptTest() {
+            const results = document.getElementById('test3-results');
+            let html = '';
+            
+            try {
+                // Test basic JavaScript functionality
+                const testArray = [1, 2, 3];
+                const testObject = { key: 'value' };
+                const testFunction = () => 'test';
+                
+                html += `<p>Array test: ${testArray.length === 3 ? '<span class="success">✓ Working</span>' : '<span class="error">✗ Failed</span>'}</p>`;
+                html += `<p>Object test: ${testObject.key === 'value' ? '<span class="success">✓ Working</span>' : '<span class="error">✗ Failed</span>'}</p>`;
+                html += `<p>Function test: ${testFunction() === 'test' ? '<span class="success">✓ Working</span>' : '<span class="error">✗ Failed</span>'}</p>`;
+                
+                // Test DOM manipulation
+                const testDiv = document.createElement('div');
+                testDiv.textContent = 'Test element created successfully';
+                testDiv.style.color = 'green';
+                results.appendChild(testDiv);
+                
+                html += `<p>DOM manipulation: <span class="success">✓ Working</span></p>`;
+                
+                console.log('Test 3 completed: JavaScript execution test');
+            } catch (error) {
+                html += `<p><span class="error">Error: ${error.message}</span></p>`;
+                console.error('Test 3 failed:', error);
+            }
+            
+            results.innerHTML = html;
+        }
+        
+        // Live status update
+        function updateLiveStatus() {
+            const statusDiv = document.getElementById('live-status');
+            const allButtons = document.querySelectorAll('button');
+            
+            let html = `<p>Total buttons found: ${allButtons.length}</p>`;
+            html += '<ul>';
+            allButtons.forEach((btn, index) => {
+                const computedStyle = window.getComputedStyle(btn);
+                html += `<li>Button ${index}: "${btn.textContent.trim()}" - display: ${computedStyle.display}, visibility: ${computedStyle.visibility}, opacity: ${computedStyle.opacity}</li>`;
+            });
+            html += '</ul>';
+            
+            statusDiv.innerHTML = html;
+        }
+        
+        // Run tests on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('=== DOM Test Page Loaded ===');
+            testBasicDOM();
+            testButtonVisibility();
+            runJavaScriptTest();
+            updateLiveStatus();
+            
+            // Update live status every 2 seconds
+            setInterval(updateLiveStatus, 2000);
+            
+            console.log('All tests completed. Check results above.');
+        });
+        
+        // Global error handler
+        window.addEventListener('error', function(event) {
+            console.error('Global error caught:', event.message, 'at line', event.lineno, 'in file', event.filename);
+        });
+    </script>
+</body>
+</html>

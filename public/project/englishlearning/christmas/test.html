@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Learning - TEST</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .navigation-buttons { margin: 20px 0; }
+        .nav-button { 
+            padding: 10px 20px; 
+            margin: 0 10px; 
+            background: #007bff; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+        }
+        .nav-button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Christmas Learning - TEST VERSION</h1>
+    
+    <div class="navigation-buttons">
+        <button id="prev-button" class="nav-button">Previous</button>
+        <button id="complete-button" class="nav-button">Complete</button>
+        <button id="next-button" class="nav-button">Next</button>
+    </div>
+    
+    <div id="status">Loading...</div>
+    
+    <script>
+        console.log('=== TEST SCRIPT STARTED ===');
+        
+        const status = document.getElementById('status');
+        
+        function updateStatus(message) {
+            console.log('Status:', message);
+            if (status) {
+                status.textContent = message;
+            }
+        }
+        
+        // Test button functionality
+        function testButtons() {
+            updateStatus('Testing buttons...');
+            
+            const prevBtn = document.getElementById('prev-button');
+            const nextBtn = document.getElementById('next-button');
+            const completeBtn = document.getElementById('complete-button');
+            
+            console.log('prev-button:', prevBtn);
+            console.log('next-button:', nextBtn);
+            console.log('complete-button:', completeBtn);
+            
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => updateStatus('Previous clicked!'));
+                updateStatus('Previous button found and configured');
+            } else {
+                updateStatus('Previous button NOT found!');
+            }
+            
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => updateStatus('Next clicked!'));
+                updateStatus('Next button found and configured');
+            } else {
+                updateStatus('Next button NOT found!');
+            }
+            
+            if (completeBtn) {
+                completeBtn.addEventListener('click', () => updateStatus('Complete clicked!'));
+                updateStatus('Complete button found and configured');
+            } else {
+                updateStatus('Complete button NOT found!');
+            }
+        }
+        
+        // Test immediately
+        testButtons();
+        
+        // Test after DOM ready
+        document.addEventListener('DOMContentLoaded', function() {
+            updateStatus('DOMContentLoaded fired - testing again...');
+            setTimeout(testButtons, 100);
+        });
+        
+        // Test after full load
+        window.addEventListener('load', function() {
+            updateStatus('Window loaded - final test...');
+            setTimeout(testButtons, 500);
+        });
+        
+        console.log('=== TEST SCRIPT ENDED ===');
+    </script>
+</body>
+</html>

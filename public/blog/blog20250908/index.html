@@ -139,7 +139,7 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="新的开始">新的开始</h2>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l post-content"><h2 id="新的开始">新的开始</h2>
 <p>今天是我正式开始写博客的日子。</p>
 <p>想了很久，终于决定开始记录自己的生活和思考。不是因为我有什么特别的见解，而是觉得应该留下一些痕迹。</p>
 <h2 id="为什么写博客">为什么写博客</h2>
@@ -184,6 +184,69 @@
 </aside>
 
   </article>
+  
+  
+  
+<script>
+(function() {
+  const correctPassword = '123654';
+  const contentWrapper = document.querySelector('.post-content, .single-content, main');
+  
+  if (!contentWrapper) return;
+  
+  
+  const originalContent = contentWrapper.innerHTML;
+  
+  
+  function createPasswordPrompt() {
+    contentWrapper.innerHTML = `
+      <div style="text-align: center; padding: 50px 20px; max-width: 400px; margin: 0 auto;">
+        <h3 style="color: #333; margin-bottom: 20px;">🔒 请输入密码查看内容</h3>
+        <input type="password" id="passwordInput" placeholder="请输入密码" 
+               style="padding: 12px; width: 100%; border: 2px solid #ddd; border-radius: 5px; margin-bottom: 15px; font-size: 16px;">
+        <button id="submitPassword" style="padding: 12px 24px; background: #007cba; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">确认</button>
+        <p id="errorMsg" style="color: red; margin-top: 10px; display: none;">密码错误，请重试</p>
+      </div>
+    `;
+    
+    document.getElementById('submitPassword').addEventListener('click', checkPassword);
+    document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') checkPassword();
+    });
+  }
+  
+  
+  function checkPassword() {
+    const input = document.getElementById('passwordInput').value;
+    const errorMsg = document.getElementById('errorMsg');
+    
+    if (input === correctPassword) {
+      
+      contentWrapper.innerHTML = originalContent;
+      
+      sessionStorage.setItem('unlocked-\/blog\/blog20250908\/', 'true');
+    } else {
+      
+      errorMsg.style.display = 'block';
+      document.getElementById('passwordInput').value = '';
+      document.getElementById('passwordInput').focus();
+    }
+  }
+  
+  
+  function checkUnlocked() {
+    if (sessionStorage.getItem('unlocked-\/blog\/blog20250908\/') === 'true') {
+      
+      return;
+    }
+    createPasswordPrompt();
+  }
+  
+  
+  checkUnlocked();
+})();
+</script>
+
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

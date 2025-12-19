@@ -141,7 +141,7 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h3 id="2024年底的重大转折">2024年底的重大转折</h3>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l post-content"><h3 id="2024年底的重大转折">2024年底的重大转折</h3>
 <p>2024年底，我经历了人生中的一个重大转折。在此之前，四十多年的生活主题是&quot;按部就班&quot;——被动地接受生活的安排，被工作和社交推着往前走。而转折之后，时间完全属于我自己，生活从被动模式切换到了主动模式。</p>
 <p>这种转变起初令人不安，但也让我开始思考：当生活完全由自己掌控时，应该如何度过每一天？</p>
 <h3 id="震荡后的思考新生活目标的设立">震荡后的思考：新生活目标的设立</h3>
@@ -238,6 +238,69 @@
 </aside>
 
   </article>
+  
+  
+  
+<script>
+(function() {
+  const correctPassword = '123654';
+  const contentWrapper = document.querySelector('.post-content, .single-content, main');
+  
+  if (!contentWrapper) return;
+  
+  
+  const originalContent = contentWrapper.innerHTML;
+  
+  
+  function createPasswordPrompt() {
+    contentWrapper.innerHTML = `
+      <div style="text-align: center; padding: 50px 20px; max-width: 400px; margin: 0 auto;">
+        <h3 style="color: #333; margin-bottom: 20px;">🔒 请输入密码查看内容</h3>
+        <input type="password" id="passwordInput" placeholder="请输入密码" 
+               style="padding: 12px; width: 100%; border: 2px solid #ddd; border-radius: 5px; margin-bottom: 15px; font-size: 16px;">
+        <button id="submitPassword" style="padding: 12px 24px; background: #007cba; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">确认</button>
+        <p id="errorMsg" style="color: red; margin-top: 10px; display: none;">密码错误，请重试</p>
+      </div>
+    `;
+    
+    document.getElementById('submitPassword').addEventListener('click', checkPassword);
+    document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') checkPassword();
+    });
+  }
+  
+  
+  function checkPassword() {
+    const input = document.getElementById('passwordInput').value;
+    const errorMsg = document.getElementById('errorMsg');
+    
+    if (input === correctPassword) {
+      
+      contentWrapper.innerHTML = originalContent;
+      
+      sessionStorage.setItem('unlocked-\/blog\/blog20250918\/', 'true');
+    } else {
+      
+      errorMsg.style.display = 'block';
+      document.getElementById('passwordInput').value = '';
+      document.getElementById('passwordInput').focus();
+    }
+  }
+  
+  
+  function checkUnlocked() {
+    if (sessionStorage.getItem('unlocked-\/blog\/blog20250918\/') === 'true') {
+      
+      return;
+    }
+    createPasswordPrompt();
+  }
+  
+  
+  checkUnlocked();
+})();
+</script>
+
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

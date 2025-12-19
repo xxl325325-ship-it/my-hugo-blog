@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Test</title>
+</head>
+<body>
+    <h1>JavaScript Test</h1>
+    <div id="test-result">Waiting...</div>
+    <button onclick="testJS()">Test JavaScript</button>
+    
+    <script>
+        function testJS() {
+            console.log('=== JavaScript Test Started ===');
+            document.getElementById('test-result').textContent = 'JavaScript is working!';
+            console.log('=== JavaScript Test Completed ===');
+        }
+        
+        // Auto test
+        console.log('=== Auto JavaScript Test ===');
+        document.getElementById('test-result').textContent = 'JavaScript loaded successfully!';
+        
+        // Test DOM manipulation
+        const newDiv = document.createElement('div');
+        newDiv.textContent = 'DOM manipulation works!';
+        newDiv.style.color = 'green';
+        document.body.appendChild(newDiv);
+    </script>
+</body>
+</html>

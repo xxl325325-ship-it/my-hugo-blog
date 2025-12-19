@@ -207,3 +207,21 @@ main[role="main"] article section.tc-l.center.measure-wide {
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
+/* 段落间距调整 - 增加段落之间的间距 */
+article.nested-copy-line-height p {
+  margin-bottom: 1.5rem !important;  /* 增加段落间距 */
+  line-height: 1.7 !important;        /* 增加行高 */
+}
+
+/* 针对博客文章内容的段落样式 */
+main[role="main"] article p {
+  margin-bottom: 1.5rem !important;
+  line-height: 1.7 !important;
+}
+
+/* 确保所有文章段落都有合适的间距 */
+.nested-copy-line-height p {
+  margin-bottom: 1.5rem !important;
+  line-height: 1.7 !important;
+}

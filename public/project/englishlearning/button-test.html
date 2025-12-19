@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Visibility Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 2px solid #ccc; }
+        .nav-button { 
+            padding: 10px 20px; 
+            margin: 5px; 
+            background: #007bff; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+            display: inline-block;
+        }
+        .nav-button:hover { background: #0056b3; }
+        .hidden { display: none; }
+        .visible { display: inline-block !important; }
+        .debug { background: #f0f0f0; padding: 10px; margin: 10px 0; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <h1>Button Visibility Test</h1>
+    
+    <div class="test-section">
+        <h2>Test 1: Static Buttons</h2>
+        <div class="navigation-buttons">
+            <button id="test-prev" class="nav-button">Previous</button>
+            <button id="test-complete" class="nav-button">Complete</button>
+            <button id="test-next" class="nav-button">Next</button>
+        </div>
+        <div id="test1-result" class="debug"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 2: Dynamic Buttons</h2>
+        <div id="dynamic-container"></div>
+        <div id="test2-result" class="debug"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 3: Visibility Toggle</h2>
+        <button onclick="toggleButtons()">Toggle Visibility</button>
+        <div id="toggle-container">
+            <button id="toggle-prev" class="nav-button">Previous</button>
+            <button id="toggle-complete" class="nav-button">Complete</button>
+            <button id="toggle-next" class="nav-button">Next</button>
+        </div>
+        <div id="test3-result" class="debug"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Console Log</h2>
+        <div id="console-log" class="debug"></div>
+    </div>
+
+    <script>
+        // Override console.log to show on page
+        const originalLog = console.log;
+        const consoleDiv = document.getElementById('console-log');
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            consoleDiv.innerHTML += '<div>' + args.join(' ') + '</div>';
+        };
+        
+        console.log('=== Button Visibility Test Started ===');
+        
+        // Test 1: Check static buttons
+        function testStaticButtons() {
+            console.log('Testing static buttons...');
+            const prev = document.getElementById('test-prev');
+            const complete = document.getElementById('test-complete');
+            const next = document.getElementById('test-next');
+            const container = document.querySelector('.navigation-buttons');
+            
+            const result = document.getElementById('test1-result');
+            result.innerHTML = `
+                <strong>Static Button Test Results:</strong><br>
+                Container found: ${!!container}<br>
+                Previous button: ${!!prev} (display: ${prev ? prev.style.display : 'N/A'})<br>
+                Complete button: ${!!complete} (display: ${complete ? complete.style.display : 'N/A'})<br>
+                Next button: ${!!next} (display: ${next ? next.style.display : 'N/A'})<br>
+                All buttons visible: ${!!prev && !!complete && !!next}
+            `;
+            
+            console.log('Static buttons test completed');
+        }
+        
+        // Test 2: Create buttons dynamically
+        function testDynamicButtons() {
+            console.log('Creating dynamic buttons...');
+            const container = document.getElementById('dynamic-container');
+            
+            const navContainer = document.createElement('div');
+            navContainer.className = 'navigation-buttons';
+            
+            const prevBtn = document.createElement('button');
+            prevBtn.id = 'dynamic-prev';
+            prevBtn.className = 'nav-button';
+            prevBtn.textContent = 'Previous';
+            
+            const completeBtn = document.createElement('button');
+            completeBtn.id = 'dynamic-complete';
+            completeBtn.className = 'nav-button';
+            completeBtn.textContent = 'Complete';
+            
+            const nextBtn = document.createElement('button');
+            nextBtn.id = 'dynamic-next';
+            nextBtn.className = 'nav-button';
+            nextBtn.textContent = 'Next';
+            
+            navContainer.appendChild(prevBtn);
+            navContainer.appendChild(completeBtn);
+            navContainer.appendChild(nextBtn);
+            container.appendChild(navContainer);
+            
+            const result = document.getElementById('test2-result');
+            result.innerHTML = `
+                <strong>Dynamic Button Test Results:</strong><br>
+                Created container: ${!!navContainer}<br>
+                Created previous button: ${!!prevBtn}<br>
+                Created complete button: ${!!completeBtn}<br>
+                Created next button: ${!!nextBtn}<br>
+                All elements added to DOM: ${!!container.querySelector('#dynamic-prev')}
+            `;
+            
+            console.log('Dynamic buttons created and added to DOM');
+        }
+        
+        // Test 3: Toggle visibility
+        function toggleButtons() {
+            console.log('Toggling button visibility...');
+            const buttons = document.querySelectorAll('#toggle-container .nav-button');
+            buttons.forEach(btn => {
+                if (btn.style.display === 'none') {
+                    btn.style.display = 'inline-block';
+                } else {
+                    btn.style.display = 'none';
+                }
+            });
+            
+            const result = document.getElementById('test3-result');
+            result.innerHTML = `
+                <strong>Visibility Toggle Test:</strong><br>
+                Buttons toggled: ${buttons.length}<br>
+                Current state: ${buttons[0] && buttons[0].style.display === 'none' ? 'Hidden' : 'Visible'}
+            `;
+            
+            console.log('Button visibility toggled');
+        }
+        
+        // Run tests
+        testStaticButtons();
+        testDynamicButtons();
+        
+        console.log('=== All Tests Completed ===');
+    </script>
+</body>
+</html>

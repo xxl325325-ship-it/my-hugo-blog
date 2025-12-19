@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Page</title>
+</head>
+<body>
+    <h1>Debug Page for Christmas Learning</h1>
+    <div id="debug-info"></div>
+    <button onclick="runDebug()">Run Debug Test</button>
+    
+    <script>
+        function runDebug() {
+            const debugInfo = document.getElementById('debug-info');
+            debugInfo.innerHTML = '<h2>Debug Results:</h2>';
+            
+            // Check if we're on the right page
+            debugInfo.innerHTML += '<p>Current URL: ' + window.location.href + '</p>';
+            
+            // Check for navigation buttons
+            const prevButton = document.getElementById('prev-button');
+            const nextButton = document.getElementById('next-button');
+            const completeButton = document.getElementById('complete-button');
+            
+            debugInfo.innerHTML += '<h3>Button Check:</h3>';
+            debugInfo.innerHTML += '<p>prev-button found: ' + !!prevButton + '</p>';
+            debugInfo.innerHTML += '<p>next-button found: ' + !!nextButton + '</p>';
+            debugInfo.innerHTML += '<p>complete-button found: ' + !!completeButton + '</p>';
+            
+            // Check for navigation buttons container
+            const navContainer = document.querySelector('.navigation-buttons');
+            debugInfo.innerHTML += '<p>navigation-buttons container found: ' + !!navContainer + '</p>';
+            
+            // Check for all buttons
+            const allButtons = document.querySelectorAll('button');
+            debugInfo.innerHTML += '<h3>All Buttons (' + allButtons.length + '):</h3>';
+            allButtons.forEach((btn, i) => {
+                debugInfo.innerHTML += '<p>Button ' + i + ': id="' + btn.id + '" class="' + btn.className + '" text="' + btn.textContent.trim().substring(0, 50) + '"</p>';
+            });
+            
+            // Check for DOM status element
+            const domStatus = document.getElementById('dom-status');
+            debugInfo.innerHTML += '<p>DOM status element found: ' + !!domStatus + '</p>';
+            
+            console.log('Debug completed. Check the page for results.');
+        }
+        
+        // Run debug automatically
+        window.addEventListener('load', function() {
+            setTimeout(runDebug, 1000);
+        });
+    </script>
+</body>
+</html>

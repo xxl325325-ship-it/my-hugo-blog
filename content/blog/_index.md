@@ -1,6 +1,6 @@
 ---
 title: "学习笔记与思考"
-description: 
+description: "这里记录我从中年开始新生活的真实历程"
 date: 2025-09-03
 type: "blog"
 layout: "list"
@@ -10,7 +10,6 @@ menu:
     weight: 200
     identifier: "blog"
 ---
-
 这里记录我从中年开始新生活的真实历程。每一篇文章都是我转型路上的脚印，包含：
 
 ## ✍️ 笔记主题
