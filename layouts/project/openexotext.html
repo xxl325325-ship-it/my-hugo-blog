@@ -265,7 +265,7 @@
     </div>
 
     <!-- Netlify Form (Hidden) -->
-    <form name="exo-results" method="POST" action="/project/openexotest/" netlify netlify-honeypot="bot-field" hidden>
+    <form name="exo-results" method="POST" action="/openexotest/" netlify netlify-honeypot="bot-field" hidden>
         <input type="text" name="userId" />
         <input type="text" name="score" />
         <input type="text" name="answers" />
@@ -665,7 +665,7 @@
             formData.append('details', `Timestamp: ${new Date(data.timestamp).toISOString()}`);
 
             // Post to the current page URL to avoid 404s
-            fetch('/project/openexotest/', {
+            fetch('/openexotest/', {
                 method: 'POST',
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: new URLSearchParams(formData).toString()
