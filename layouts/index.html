@@ -1,5 +1,10 @@
-{{ define "header" }}{{ partials.Include "page-header.html" . }}{{ end }}
 {{ define "main" }}
+    <style>
+        /* Hide global header and footer for this page */
+        header, nav, .site-header, .site-navigation, footer, .bg-black-90, .ph3, .pv3, .ph4-m, .ph5-l {
+            display: none !important;
+        }
+    </style>
     <article class="center cf pv5 measure-wide-l tc">
       <h1>
         404 - Page Not Found
