@@ -265,7 +265,7 @@
     </div>
 
     <!-- Netlify Form (Hidden) -->
-    <form name="exo-results" netlify netlify-honeypot="bot-field" hidden>
+    <form name="exo-results" method="POST" action="/project/openexotest/" netlify netlify-honeypot="bot-field" hidden>
         <input type="text" name="userId" />
         <input type="text" name="score" />
         <input type="text" name="answers" />
@@ -664,11 +664,14 @@
             formData.append('answers', JSON.stringify(data.answers));
             formData.append('details', `Timestamp: ${new Date(data.timestamp).toISOString()}`);
 
-            fetch('/', {
+            // Post to the current page URL to avoid 404s
+            fetch('/project/openexotest/', {
                 method: 'POST',
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: new URLSearchParams(formData).toString()
-            }).catch(error => console.error('Submission error:', error));
+            })
+            .then(() => console.log('Form successfully submitted'))
+            .catch(error => console.error('Submission error:', error));
         }
 
         function triggerFireworks() {
