@@ -1,33 +1,9 @@
+{{ define "header" }}{{ partials.Include "page-header.html" . }}{{ end }}
 {{ define "main" }}
-<main class="pb7" role="main">
-  <article class="cf ph3 ph5-l pv3 pv4-l f5 tc-l center measure-wide lh-copy nested-links mid-gray">
-    <div class="mt4">
-      <h1 id="-你好欢迎">🏠 你好，欢迎</h1>
-      <p>我是<strong>Chilli</strong>，一名在中年勇敢开始新生活的学习者。这个网站记录我的转型历程、思考感悟和日常点滴。</p>
-      
-      <h2 id="-关于这个空间">👤 关于这个空间</h2>
-      <p>这里是我探索和学习、分享生活感悟的地方。我相信，学习是一生的事业，而分享是最好的学习方式。</p>
-      
-      <h2 id="-最新分享">📝 最新分享</h2>
-      <ul>
-        {{ range first 3 (where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
-        <li><a href="{{ .Permalink }}">{{ .Title }}</a> - {{ .Date.Format "2006-01-02" }}</li>
-        {{ end }}
-      </ul>
-      
-      <h2 id="-探索更多">🔍 探索更多</h2>
-      <ul>
-        <li><a href="/blog/">📚 学习笔记与思考</a> - 我的技术学习和生活思考</li>
-        <li><a href="/project/">👨‍💻 项目展示</a> - 正在进行的项目</li>
-        <li><a href="/about/">🎯 关于我</a> - 更多关于我的故事</li>
-      </ul>
-      
-      <hr>
-      <blockquote>
-        <p>💡 <em>"种一棵树最好的时间是十年前，其次是现在。"</em></p>
-        <p>我们一起学习成长，在分享中进步！</p>
-      </blockquote>
-    </div>
-  </article>
-</main>
+    <article class="center cf pv5 measure-wide-l tc">
+      <h1>
+        404 - Page Not Found
+      </h1>
+      <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+    </article>
 {{ end }}
