@@ -1,0 +1,319 @@
+{{ define "main" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Kids World</title>
+    <style>
+        /* Global Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Hide all navigation */
+        header, nav, footer, .site-header, .site-navigation, .bg-black-90, .ph3, .pv3, .ph4-m, .ph5-l {
+            display: none !important;
+        }
+
+        body {
+            background-color: #FFF9F0; /* Warm, paper-like background */
+            font-family: 'Rounded Mplus 1c', 'Comic Sans MS', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 1.5s ease;
+        }
+
+        /* Main Illustration Container */
+        .world-container {
+            position: relative;
+            width: 80vmin;
+            height: 80vmin;
+            max-width: 600px;
+            max-height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* The Illustration (SVG Placeholder) */
+        .illustration {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+            transition: opacity 1s ease;
+        }
+
+        /* Topic Grid */
+        .topics-grid {
+            position: absolute;
+            bottom: 50px;
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+            z-index: 20;
+        }
+
+        .topic-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 15px;
+            width: 100px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            backdrop-filter: blur(5px);
+            border: 2px solid white;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            background: white;
+        }
+
+        .topic-icon {
+            font-size: 3rem;
+            margin-bottom: 5px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .topic-label {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #555;
+            text-align: center;
+        }
+
+        /* Hide Mic */
+        .mic-container {
+            display: none;
+        }
+
+        /* Overlay for transitions */
+        .transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #FFF9F0;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 1.5s ease;
+            z-index: 100;
+        }
+
+        .transition-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 20px rgba(255, 107, 107, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
+        }
+
+        /* Hidden Audio Element */
+        #system-voice {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Main Visual -->
+    <div class="world-container">
+        <!-- Using a generated SVG for the "Floating Worlds" concept -->
+        <svg class="illustration" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="5" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+            </defs>
+            
+            <!-- Floating Elements Group -->
+            <g filter="url(#soft-glow)">
+                <!-- Cloud 1 -->
+                <path d="M100,150 Q120,100 150,130 T200,150 T150,200 T100,150" fill="#E0F7FA" opacity="0.8" />
+                
+                <!-- Christmas Tree (Simple Triangle) -->
+                <path d="M250,100 L200,200 L300,200 Z" fill="#A5D6A7" transform="translate(0, 20)" />
+                <circle cx="250" cy="200" r="10" fill="#8D6E63" /> <!-- Trunk -->
+                
+                <!-- Birthday Cake -->
+                <rect x="350" y="250" width="60" height="40" rx="5" fill="#FFCCBC" />
+                <rect x="350" y="230" width="60" height="20" rx="5" fill="#FFAB91" />
+                <circle cx="380" cy="225" r="3" fill="#FF5252" /> <!-- Candle flame -->
+
+                <!-- Balloon -->
+                <circle cx="150" cy="350" r="30" fill="#B39DDB" />
+                <path d="M150,380 Q150,400 160,410" stroke="#9575CD" stroke-width="2" fill="none" />
+
+                <!-- Animal (Bear Face) -->
+                <circle cx="250" cy="300" r="40" fill="#D7CCC8" />
+                <circle cx="235" cy="290" r="5" fill="#3E2723" />
+                <circle cx="265" cy="290" r="5" fill="#3E2723" />
+                <path d="M240,310 Q250,320 260,310" stroke="#3E2723" stroke-width="2" fill="none" />
+            </g>
+        </svg>
+    </div>
+
+    <!-- Interaction Area -->
+    <div class="topics-grid">
+        <div class="topic-card" onclick="selectTopic('birthday')">
+            <div class="topic-icon">🎂</div>
+            <div class="topic-label">Birthday</div>
+        </div>
+        <div class="topic-card" onclick="selectTopic('animals')">
+            <div class="topic-icon">🐶</div>
+            <div class="topic-label">Animals</div>
+        </div>
+        <div class="topic-card" onclick="selectTopic('christmas')">
+            <div class="topic-icon">🎄</div>
+            <div class="topic-label">Christmas</div>
+        </div>
+        <div class="topic-card" onclick="selectTopic('family')">
+            <div class="topic-icon">👨‍👩‍👧</div>
+            <div class="topic-label">Family</div>
+        </div>
+        <div class="topic-card" onclick="selectTopic('food')">
+            <div class="topic-icon">🍎</div>
+            <div class="topic-label">Food</div>
+        </div>
+        <div class="topic-card" onclick="selectTopic('toys')">
+            <div class="topic-icon">🧸</div>
+            <div class="topic-label">Toys</div>
+        </div>
+        <div class="topic-card" onclick="selectTopic('weather')">
+            <div class="topic-icon">☀️</div>
+            <div class="topic-label">Weather</div>
+        </div>
+    </div>
+
+    <!-- Transition Layer -->
+    <div class="transition-overlay" id="transitionLayer"></div>
+
+    <script>
+        // --- Configuration ---
+        const SAFE_TOPICS = {
+            'birthday': '/project/englishlearning/birthday',
+            'animals': '/project/englishlearning/animals',
+            'family': '/project/englishlearning/family',
+            'food': '/project/englishlearning/food',
+            'toys': '/project/englishlearning/toys',
+            'weather': '/project/englishlearning/weather',
+            'christmas': '/project/englishlearning/christmas-test'
+        };
+        const FALLBACK_TOPIC = '/project/englishlearning/christmas-test'; // Default safe place
+
+        // --- Speech Synthesis (Output) ---
+        function speak(text, callback) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.9; // Slightly slower
+            utterance.pitch = 1.1; // Slightly higher/friendlier
+            
+            // Try to find a female voice if possible
+            const voices = window.speechSynthesis.getVoices();
+            const preferredVoice = voices.find(v => v.name.includes('Samantha') || v.name.includes('Female'));
+            if (preferredVoice) utterance.voice = preferredVoice;
+
+            utterance.onend = callback;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // --- Speech Recognition (Input) ---
+        // Removed as per request to switch to click interface
+        
+        // --- Logic Flow ---
+        
+        // 1. Init: Play welcome message automatically
+        window.addEventListener('load', () => {
+            // Need user interaction to play audio usually, but let's try.
+            // If blocked, we might play it on first click.
+            setTimeout(() => {
+                speak("What do you want to see?");
+            }, 1000);
+        });
+
+        // 2. Interaction
+        function selectTopic(topic) {
+            handleInput(topic);
+        }
+
+        // 3. Process Input
+        function handleInput(text) {
+            let targetUrl = FALLBACK_TOPIC;
+            let found = false;
+
+            // Check if input contains any safe topic
+            if (SAFE_TOPICS[text]) {
+                targetUrl = SAFE_TOPICS[text];
+                found = true;
+            } else {
+                // Check partially if needed (though now it's direct click)
+                for (const [key, url] of Object.entries(SAFE_TOPICS)) {
+                    if (text.includes(key)) {
+                        targetUrl = url;
+                        found = true;
+                        break;
+                    }
+                }
+            }
+
+            // If not found, pick a random one from SAFE_TOPICS to simulate "magic"
+            if (!found) {
+                const keys = Object.keys(SAFE_TOPICS);
+                const randomKey = keys[Math.floor(Math.random() * keys.length)];
+                targetUrl = SAFE_TOPICS[randomKey];
+            }
+
+            // 4. Response & Transition
+            speak("Let's see " + text + ".", () => {
+                performTransition(targetUrl);
+            });
+        }
+
+        // 5. Visual Transition
+        function performTransition(url) {
+            const overlay = document.getElementById('transitionLayer');
+            overlay.classList.add('active'); // Fade to white
+            
+            setTimeout(() => {
+                window.location.href = url;
+            }, 1500); // Wait for fade out
+        }
+
+    </script>
+</body>
+</html>
+{{ end }}
